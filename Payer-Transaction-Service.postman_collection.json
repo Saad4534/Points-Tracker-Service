@@ -1,0 +1,447 @@
+{
+	"info": {
+		"_postman_id": "cd88726c-2cce-44f4-830d-d703e0adee58",
+		"name": "Payer-Transaction-Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41250339"
+	},
+	"item": [
+		{
+			"name": "getBalance",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/transaction/balance",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transaction",
+						"balance"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getBalance",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/transaction/balance",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transaction",
+								"balance"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-ZBSF1AO8JwPUFEwpA765CL961Xc\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Feb 2025 06:39:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"SHOPIFY\": 1000,\n    \"EBAY\": 0,\n    \"AMAZON\": 5300\n}"
+				}
+			]
+		},
+		{
+			"name": "getBalanceInDetail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payer\": \"AMAZON\",\n    \"points\": 5000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/transaction/balanceInDetail",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transaction",
+						"balanceInDetail"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getBalanceInDetail",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payer\": \"AMAZON\",\n    \"points\": 5000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/transaction/balanceInDetail",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transaction",
+								"balanceInDetail"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "341"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"155-0qVp9xfCzAAuLNQ3vygO65g5AQo\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Feb 2025 06:39:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"payer\": \"SHOPIFY\",\n        \"points\": 1000,\n        \"timestamp\": \"2024-07-02T14:00:00Z\"\n    },\n    {\n        \"payer\": \"EBAY\",\n        \"points\": 200,\n        \"timestamp\": \"2024-06-30T11:00:00Z\"\n    },\n    {\n        \"payer\": \"SHOPIFY\",\n        \"points\": -200,\n        \"timestamp\": \"2024-06-30T15:00:00Z\"\n    },\n    {\n        \"payer\": \"AMAZON\",\n        \"points\": 10000,\n        \"timestamp\": \"2024-07-01T14:00:00Z\"\n    },\n    {\n        \"payer\": \"SHOPIFY\",\n        \"points\": 300,\n        \"timestamp\": \"2024-06-30T10:00:00Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "totalBalance",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/transaction/totalBalance",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transaction",
+						"totalBalance"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "totalBalance",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/transaction/totalBalance",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transaction",
+								"totalBalance"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1-tlifxqsNyCzxIJnRwtQKuZToQQw\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Feb 2025 07:35:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "0"
+				}
+			]
+		},
+		{
+			"name": "spendPoints",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"points\": 5000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/transaction/spendPoints",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transaction",
+						"spendPoints"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "spendPoints",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"points\": 5000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/transaction/spendPoints",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transaction",
+								"spendPoints"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "101"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"65-X2jB9pen/kFUWMHmTBIVnmH/RCA\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Feb 2025 06:39:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Points deducted from Payers!!\",\n    \"spendPoints\": {\n        \"SHOPIFY\": -100,\n        \"EBAY\": -200,\n        \"AMAZON\": -4700\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "addTransaction",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"payer\": \"SHOPIFY\",\n    \"points\": 1000,\n    \"timestamp\": \"2024-07-02T14:00:00Z\"\n  },\n  {\n    \"payer\": \"EBAY\",\n    \"points\": 200,\n    \"timestamp\": \"2024-06-30T11:00:00Z\"\n  },\n  {\n    \"payer\": \"SHOPIFY\",\n    \"points\": -200,\n    \"timestamp\": \"2024-06-30T15:00:00Z\"\n  },\n  {\n    \"payer\": \"AMAZON\",\n    \"points\": 10000,\n    \"timestamp\": \"2024-07-01T14:00:00Z\"\n  },\n  {\n    \"payer\": \"SHOPIFY\",\n    \"points\": 300,\n    \"timestamp\": \"2024-06-30T10:00:00Z\"\n  }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/transaction/addTransaction",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"transaction",
+						"addTransaction"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "addTransaction",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"payer\": \"SHOPIFY\",\n    \"points\": 1000,\n    \"timestamp\": \"2024-07-02T14:00:00Z\"\n  },\n  {\n    \"payer\": \"EBAY\",\n    \"points\": 200,\n    \"timestamp\": \"2024-06-30T11:00:00Z\"\n  },\n  {\n    \"payer\": \"SHOPIFY\",\n    \"points\": -200,\n    \"timestamp\": \"2024-06-30T15:00:00Z\"\n  },\n  {\n    \"payer\": \"AMAZON\",\n    \"points\": 10000,\n    \"timestamp\": \"2024-07-01T14:00:00Z\"\n  },\n  {\n    \"payer\": \"SHOPIFY\",\n    \"points\": 300,\n    \"timestamp\": \"2024-06-30T10:00:00Z\"\n  }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/transaction/addTransaction",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transaction",
+								"addTransaction"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "128"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"80-uJyPzsuw0X6nm+Y6himFPc6uffg\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Feb 2025 06:39:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Transactions added successfully!\",\n    \"updatedBalances\": {\n        \"SHOPIFY\": 1100,\n        \"EBAY\": 200,\n        \"AMAZON\": 10000\n    },\n    \"totalBalance\": 11300\n}"
+				}
+			]
+		}
+	]
+}
